@@ -1,0 +1,36 @@
+{
+  "name": "jsonjsontemplate",
+  "version": "0.0.1",
+  "description": "A json-based json templating language.",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "cd test;cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "antlr": "antlr4 -Dlanguage=JavaScript -o js/parser -visitor JJTLexer.g4 JJTParser.g4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkumor/jsonjsontemplate.git"
+  },
+  "keywords": [
+    "json",
+    "template",
+    "javascript",
+    "golang"
+  ],
+  "author": "",
+  "type": "module",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dkumor/jsonjsontemplate/issues"
+  },
+  "homepage": "https://github.com/dkumor/jsonjsontemplate#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "glob": "^7.2.0",
+    "jest": "^27.5.1",
+    "json-stable-stringify": "^1.0.1"
+  },
+  "dependencies": {
+    "antlr4": "^4.9.3"
+  }
+}
