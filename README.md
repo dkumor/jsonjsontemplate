@@ -92,7 +92,7 @@ This templating language joins several existing approaches:
 - https://github.com/datavis-tech/json-templates
 - https://github.com/lightsofapollo/json-templater
 
-JsonJsonTemplate supports more general operations than these approaches, while maintaining simplicity for regular usage.
+JsonJsonTemplate supports more general operations than these approaches, at the cost of slightly higher complexity.
 
 ## Implementations in this Repository
 
@@ -101,7 +101,7 @@ JsonJsonTemplate supports more general operations than these approaches, while m
 The JavaScript implementation of the template system generates a function that applies the template to a given context object. It can be used as follows:
 
 ```javascript
-import jjt from "jsonjsontemplate";
+import jjt from "json-json-template";
 
 const input = JSON.parse(jsonstring);
 const context = {

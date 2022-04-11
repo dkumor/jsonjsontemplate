@@ -3,7 +3,7 @@ import { InputStream,CommonTokenStream } from "antlr4"
 import jjtLexer from "./parser/JJTLexer.js";
 import jjtParser from "./parser/JJTParser.js";
 import jjtVisitor from "./visitor.js";
-import {Num,Bool,Null,JSONOutput,Spread} from "./expression_generator.js";
+import {Num,Bool,Null,Str,JSONOutput,Spread} from "./expression_generator.js";
 
 export default function template(o) {
     if (o==null) {
@@ -26,6 +26,9 @@ export default function template(o) {
 }
 
 function parse(text) {
+    if (!text.includes("{{")) {
+        return new Str(text);
+    }
     const inputStream = new InputStream(text);
     const lexer = new jjtLexer(inputStream);
     const tokenStream = new CommonTokenStream(lexer);
