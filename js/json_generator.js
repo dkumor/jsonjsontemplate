@@ -1,4 +1,4 @@
-import { InputStream,CommonTokenStream } from "antlr4"
+import antlr4 from "antlr4"
 
 import jjtLexer from "./parser/JJTLexer.js";
 import jjtParser from "./parser/JJTParser.js";
@@ -29,9 +29,9 @@ function parse(text) {
     if (!text.includes("{{")) {
         return new Str(text);
     }
-    const inputStream = new InputStream(text);
+    const inputStream = new antlr4.InputStream(text);
     const lexer = new jjtLexer(inputStream);
-    const tokenStream = new CommonTokenStream(lexer);
+    const tokenStream = new antlr4.CommonTokenStream(lexer);
     const parser = new jjtParser(tokenStream);
     const tree = parser.output();
     const visitor = new jjtVisitor();
